@@ -1,5 +1,11 @@
 # @chitwan001/synth-editor
 
+## 0.1.0
+
+### Minor Changes
+
+- f1befc1: built index.ts
+
 ## 0.0.3
 
 ### Patch Changes
