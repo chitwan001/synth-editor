@@ -1,4 +1,5 @@
 import {AddNodeMethod} from "../types/dom";
+import {generateCssStyleFromObjKey} from "../utils/ui";
 
 export interface IDomService {
     addNodeToElement(parent: HTMLElement, method?: AddNodeMethod, ...nodes: (Node | string)[]): void,
@@ -6,6 +7,10 @@ export interface IDomService {
     makeElement(name: keyof HTMLElementTagNameMap): HTMLElement,
 
     addAttributeToElement(elem: HTMLElement, name: string, val: string): void
+
+    addStylesToElement(elem: HTMLElement, styles: Record<string, any>): void
+
+    addHTMLContentToElement(elem: HTMLElement, content: any): void
 }
 
 
@@ -50,5 +55,26 @@ export class DomService implements IDomService {
      */
     addAttributeToElement(elem: HTMLElement, name: string, val: string) {
         elem.setAttribute(name, val)
+    }
+
+    /**
+     * Adds styles to the element provided in Record<string, any>
+     * @param elem
+     * @param styles
+     */
+    addStylesToElement(elem: HTMLElement, styles: Record<string, any>) {
+        for (const property in styles) {
+            const cssProp = generateCssStyleFromObjKey(property)
+            elem.style.setProperty(cssProp, styles[property])
+        }
+    }
+
+    /**
+     * Adds HTML Content (inner HTML) to a specified element
+     * @param elem
+     * @param content
+     */
+    addHTMLContentToElement(elem: HTMLElement, content: any) {
+        elem.innerHTML = content;
     }
 }
