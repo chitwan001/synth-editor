@@ -1,5 +1,11 @@
 # @chitwan001/synth-editor
 
+## 0.1.3
+
+### Patch Changes
+
+- 9eb35f5: styles try
+
 ## 0.1.2
 
 ### Patch Changes
