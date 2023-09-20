@@ -1,3 +1,3 @@
-const hello = () => {
-    return 'hello'
+export const hello = () => {
+    console.log("hello")
 }
