@@ -1,5 +1,11 @@
 # @chitwan001/synth-editor
 
+## 0.1.1
+
+### Patch Changes
+
+- 8e2e156: hello fix
+
 ## 0.1.0
 
 ### Minor Changes
