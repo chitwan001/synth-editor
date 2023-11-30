@@ -17,8 +17,8 @@ export class LineCounter implements ILineCounterService{
             position:'absolute',
             left:0,
             top: '50px',
-            width:'80px',
-            height: 'calc(100% - 50px - 40px)',
+            width:'90px',
+            height: 'calc(100% - 40px - 40px)',
             borderRight: '1px solid var(--synth-light-divider-color)'
         })
     }
