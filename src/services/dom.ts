@@ -8,9 +8,17 @@ export interface IDomService {
 
     addAttributeToElement(elem: HTMLElement, name: string, val: string): void
 
+    getAttributeValue(elem: HTMLElement, name: string): string
+
     addStylesToElement(elem: HTMLElement, styles: Record<string, any>): void
 
     addHTMLContentToElement(elem: HTMLElement, content: any): void
+
+    removeHTMLContentFromElement(elem: HTMLElement): void
+
+    addListOfClassName(elem: HTMLElement, ...classNames: string[]): void
+
+    removeListOfClassName(elem: HTMLElement, ...classNames: string[]): void
 }
 
 
@@ -58,6 +66,15 @@ export class DomService implements IDomService {
     }
 
     /**
+     * Returns the value of the specified attribute if exists else an empty string
+     * @param elem
+     * @param name
+     */
+    getAttributeValue(elem: HTMLElement, name: string) {
+        return elem.getAttribute(name) || ""
+    }
+
+    /**
      * Adds styles to the element provided in Record<string, any>
      * @param elem
      * @param styles
@@ -76,5 +93,31 @@ export class DomService implements IDomService {
      */
     addHTMLContentToElement(elem: HTMLElement, content: any) {
         elem.innerHTML = content;
+    }
+
+    /**
+     * Removes the existing html content from specified tag
+     * @param elem
+     */
+    removeHTMLContentFromElement(elem: HTMLElement) {
+        elem.innerHTML = ""
+    }
+
+    /**
+     * Adds the provided list of class names to the element
+     * @param elem
+     * @param classNames
+     */
+    addListOfClassName(elem: HTMLElement, ...classNames: string[]) {
+        elem.classList.add(...classNames)
+    }
+
+    /**
+     * Removes the provided list of class names from the element
+     * @param elem
+     * @param classNames
+     */
+    removeListOfClassName(elem: HTMLElement, ...classNames: string[]) {
+        elem.classList.remove(...classNames)
     }
 }
