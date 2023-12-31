@@ -1,5 +1,15 @@
 # @chitwan001/synth-editor
 
+## 0.4.0
+
+### Minor Changes
+
+- de6f164: color change
+
+### Patch Changes
+
+- 2b5b120: test fails intentionally
+
 ## 0.2.0
 
 ### Minor Changes
